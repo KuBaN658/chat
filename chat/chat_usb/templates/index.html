@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Chat usb</h1>
+
+  <p>Добро пожаловать в <em>Chat usb</em>, мой первый самостоятельный проект!</p>
+
+<h2>Динамический контент</h2>
+
+  <p>Количество записей в нашей базе данных</p>
+  <ul>
+    <li><strong>Сообщений:</strong> {{ num_messages }}</li>
+    <li><strong>Пользователей:</strong> {{ num_user }}</li>
+    <li><strong>Чатов:</strong> {{ num_chat }}</li>
+  </ul>
+
+{% endblock %}
