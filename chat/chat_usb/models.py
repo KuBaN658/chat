@@ -1,4 +1,6 @@
 from django.db import models
+from django.urls import reverse
+
 
 class Message(models.Model):
     """
@@ -40,5 +42,8 @@ class User(models.Model):
 
     def __str__(self):
         return self.username
+
+    def get_absolute_url(self):
+        return reverse('user-detail', args=[str(self.id)])
 
 

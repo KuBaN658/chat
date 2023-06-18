@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.views.generic.edit import CreateView
 from .models import User, Message, Chat
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView
 
 
 def index(request):
@@ -14,7 +14,7 @@ def index(request):
     num_chat = Chat.objects.all().count()
     return render(
         request,
-        'index.html',
+        'chat_usb/index.html',
         context={
             'num_messages': num_messages,
             'num_user': num_user,
@@ -30,7 +30,13 @@ class UserListView(ListView):
 
     def get_context_data(self, **kwargs):
         # В первую очередь получаем базовую реализацию контекста
-        context = super(BookListView, self).get_context_data(**kwargs)
+        context = super(UserListView, self).get_context_data(**kwargs)
         # Добавляем новую переменную к контексту и инициализируем её некоторым значением
         context['some_data'] = 'This is just some data'
         return context
+
+
+class UserDetailView(DetailView):
+    template_name = 'chat_usb/user_detail.html'
+    model = User
+    context_object_name = 'user'

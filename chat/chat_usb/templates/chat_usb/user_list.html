@@ -1,0 +1,19 @@
+{% extends "chat_usb/base.html" %}
+
+{% block content %}
+    <h1>Список контактов</h1>
+
+    {% if user_list %}
+    <ul>
+
+      {% for user in user_list %}
+      <li>
+        <a href="{% url 'user-detail' user.pk %}">{{ user.username }}</a>
+      </li>
+      {% endfor %}
+
+    </ul>
+    {% else %}
+      <p>Нет пользователей</p>
+    {% endif %}
+{% endblock %}
