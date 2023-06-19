@@ -12,6 +12,8 @@ def index(request):
     num_messages = Message.objects.all().count()
     num_user = User.objects.all().count()
     num_chat = Chat.objects.all().count()
+    num_visits = request.session.get('num_visits', 0)
+    request.session['num_visits'] = num_visits + 1
     return render(
         request,
         'chat_usb/index.html',
@@ -19,11 +21,14 @@ def index(request):
             'num_messages': num_messages,
             'num_user': num_user,
             'num_chat': num_chat,
+            'num_visits': num_visits,
         }
     )
 
+
 class UserListView(ListView):
     model = User
+    paginate_by = 2
 
     def get_queryset(self):
         return User.objects.all()
