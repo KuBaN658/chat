@@ -1,0 +1,53 @@
+body {
+    margin: 0;
+    font-family: Sans-Serif;
+}
+
+#header {
+    background-color: #BFF1F2;
+    height: 4rem;
+    padding: 10px;
+}
+
+h1 {
+    width:50%;
+    margin: 20px auto 5px;
+    text-align: center;
+    padding: 5px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px #3ca3c1;
+}
+
+form {
+    margin: 1.5rem auto 5px;
+    width: 90%;
+    max-width: 12rem;
+    padding: 1rem;
+    border-radius: 10px;
+    font-size: 16px;
+    background-color: #BFF1F2;
+    box-shadow: 0 2px 8px #3ca3c1;
+}
+
+button {
+    cursor: pointer;
+    background-color: #bf0d55;
+    color: white;
+    border: 10px solid #bf0d55;
+}
+
+.errorlist {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    color: #ff2650
+}
+
+.errors input {
+    border-color: #aa1754;
+    background-color: #f4eeff;
+}
+
+.errors label{
+ color: red;
+}

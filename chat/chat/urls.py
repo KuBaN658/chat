@@ -8,7 +8,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('chat/', include('chat_usb.urls')),
     path('', RedirectView.as_view(url='/chat/', permanent=True)),
-    path('accounts/', include('django.contrib.auth.urls')),
+    path('account/', include('account.urls'), name='account'),
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
