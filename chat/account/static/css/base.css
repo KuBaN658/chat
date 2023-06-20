@@ -5,8 +5,23 @@ body {
 
 #header {
     background-color: #BFF1F2;
-    height: 4rem;
-    padding: 10px;
+    height: 3rem;
+    padding: 20px 10px;
+    }
+
+.logo {
+    font-size: 52px;
+}
+
+.user a {
+    float: right;
+    font-size: 24px;
+    display: block;
+}
+
+.menu {
+    top: 10%;
+    left: 50%;
 }
 
 h1 {
@@ -29,25 +44,3 @@ form {
     box-shadow: 0 2px 8px #3ca3c1;
 }
 
-button {
-    cursor: pointer;
-    background-color: #bf0d55;
-    color: white;
-    border: 10px solid #bf0d55;
-}
-
-.errorlist {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    color: #ff2650
-}
-
-.errors input {
-    border-color: #aa1754;
-    background-color: #f4eeff;
-}
-
-.errors label{
- color: red;
-}

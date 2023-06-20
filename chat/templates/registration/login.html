@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}Авторизация{% endblock %}
+{% block content %}
+    <h1>Вход в Chat USB</h1>
+    {% if form.errors %}
+        <p>
+            Твой username и пароль не совпадают.
+            Попробуйте ввести заново.
+        </p>
+    {% else %}
+        <p>Пожалуйста, заполните форму для авторизации на сайте:</p>
+    {% endif %}
+    <div class="login-form">
+        <form action="{% url 'login' %}" method="post">
+            {{ form.as_p }}
+            {% csrf_token %}
+            <input type="hidden" name="next" value="{{ next }}"/>
+            <p><input type="submit" value="Log-in"></p>
+        </form>
+    </div>
+{% endblock %}
